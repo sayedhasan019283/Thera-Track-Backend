@@ -3,7 +3,7 @@ import { TPatient } from "./patient.interface";
 import { PatientModel } from "./patient.model";
 
 const createserviceFromDB = async (payload : TPatient) => {
-    const result = await TreatmentModel.create(payload);
+    const result = await PatientModel.create(payload);
     if (!result) {
         throw new Error("Service Not Created");
     }

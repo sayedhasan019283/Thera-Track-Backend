@@ -1,10 +1,10 @@
 import { ObjectId } from "mongoose";
 
+// TypeScript Interface
 export type TPatient = {
-    clientId: ObjectId; // Unique identifier for the client
-    areaOfConcern: string[]; // List of selected areas
-    description: string; // Description field
-    points: string[]; // List of points added
-    image?: string; // Optional uploaded image URL or path
-  };
-  
+  clientId: ObjectId; // Unique identifier for the client
+  areaOfConcern: string[]; // List of selected areas
+  description: string; // Description field
+  points: string[]; // List of points added
+  image?: string; // Optional uploaded image URL or path
+};

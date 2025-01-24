@@ -1,15 +1,16 @@
 import { model, Schema } from "mongoose";
 import { TPatient } from "./patient.interface";
 
+// Mongoose Schema
 const patientSchema: Schema = new Schema<TPatient>(
   {
     clientId: {
       type: Schema.Types.ObjectId, // MongoDB ObjectId type
-      ref: "Client", // Reference to the Client model (optional, if you have a Client model)
+      ref: "Client", // Reference to the Client model
       required: true,
     },
     areaOfConcern: {
-      type: [String], // e.g., ["Neck", "Back"]
+      type: [String], // Array of strings
       required: true,
     },
     description: {
@@ -17,7 +18,7 @@ const patientSchema: Schema = new Schema<TPatient>(
       required: true,
     },
     points: {
-      type: [String], // e.g., ["01. Text", "02. Text"]
+      type: [String], // Array of strings
       required: true,
     },
     image: {
@@ -25,8 +26,8 @@ const patientSchema: Schema = new Schema<TPatient>(
       required: false,
     },
   },
-  { timestamps: true }
+  { timestamps: true } // Adds createdAt and updatedAt fields
 );
 
-
+// Mongoose Model
 export const PatientModel = model<TPatient>("Patient", patientSchema);
